@@ -73,7 +73,7 @@ Config.VoiceDefaultStepIndex    = 2                                -- start on 1
 Config.VoiceCycleControl        = 0x446258B6                       -- example key/control (PGUP)
 
 -- Mailbox indicator (integrates with bcc-mailbox)
-Config.EnableMailboxCore        = true          -- Show a messages core when true
+Config.EnableMailboxCore        = false          -- Show a messages core when true with bcc-mailbox
 Config.MailboxMaxMessages       = 10            -- Count required to fill the ring (10 unread = full)
 Config.MailboxUpdateInterval    = 30000         -- How often to refresh the count from the server (milliseconds)
 Config.Notify                   = "feather-menu"
@@ -97,12 +97,12 @@ Config.FlyEffect                = {
 }
 
 -- Bleed indicator
-Config.EnableBleedCore          = true
+Config.EnableBleedCore          = false -- true only with bcc-medical
 Config.BleedCore                = {
     CheckInterval         = 1000, -- Milliseconds between automatic bleed checks
     DamageRefreshCooldown = 2500,  -- Minimum delay between bleed checks triggered by damage
-    ShowWhenHealthy       = true,  -- When true the bleed slot stays visible even when not bleeding
-    UseBccMedical         = true   -- When true the HUD polls bcc-medical for bleed state; set false when integrating a different system
+    ShowWhenHealthy       = false,  -- When true the bleed slot stays visible even when not bleeding
+    UseBccMedical         = false   -- When true the HUD polls bcc-medical for bleed state; set false when integrating a different system
 }
 
 Config.NeedWarningThreshold     = 10.0  -- Percent at/below which hunger/thirst warnings trigger
